@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Mar  7 10:27:45 2021
+Created on Sun Mar 21 10:44:24 2021
 
 @author: iegor
 """
+
 import numpy as np
 import matplotlib.pyplot as plt
 import nnfs
@@ -27,8 +28,17 @@ X, y = spiral_data(samples=100, classes=3)
 plt.scatter(X[:, 0], X[:, 1], c=y, cmap='brg')
 plt.show()
 
+class Activation_ReLU:
+    def forward(self, inputs):
+        self.output = np.maximum(0, inputs)
+
+activation1 = Activation_ReLU()
+
 # Create Dense layer with 2 input features and 3 output values
 dense1 = Layer_Dense(2, 3)
 dense1.forward(X)
 
+activation1.forward(dense1.output)
+
 print(dense1.output[:5]) 
+print(activation1.output[:5])
