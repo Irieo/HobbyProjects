@@ -26,7 +26,7 @@ y1 = []
 y2 = []
 y3 = []
 
-for i in np.arange(-5, 5, 0.01):
+for i in np.arange(-2, 2, 0.01):
     x.append(i) 
     y1.append(layer1(i))
     y2.append(layer2(i))
